@@ -1,3 +1,5 @@
+//Created by Jerome Lalunio
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -37,6 +39,8 @@ public class TicTacToe{
 	private static JButton b7=new JButton();
 	private static JButton b8=new JButton();
 	private static JButton b9=new JButton();
+	
+	private static JButton resetScoreBTN=new JButton("Reset");
 	
 	private static boolean XsTurn=true;
 	private static int toDraw=0;
@@ -208,17 +212,28 @@ public class TicTacToe{
 				}
 			}
 		});
+		resetScoreBTN.setBounds(390, 420, 80, 30);
+		resetScoreBTN.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e){
+				O=0;
+				X=0;
+				newGame("no Value");
+			}
+		});
 		
 		
 		frame.add(b1);	frame.add(b2);	frame.add(b3);
 		frame.add(b4);	frame.add(b5);	frame.add(b6);
 		frame.add(b7);	frame.add(b8);	frame.add(b9);
 		
+		frame.add(resetScoreBTN);
+			
 		frame.add(Xpanel);
 		frame.add(Opanel);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.add(turnPanel);
 		frame.add(panel);
+		frame.setResizable(false);
 		frame.setLayout(null);
 		frame.setSize(HEIGHT, WIDTH);
 		frame.setVisible(true);
