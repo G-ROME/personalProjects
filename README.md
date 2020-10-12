@@ -1,2 +1,1 @@
-# personalProjects
-My Personal Projects
+# Nothing to see here
